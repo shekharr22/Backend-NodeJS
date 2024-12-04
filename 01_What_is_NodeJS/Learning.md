@@ -29,7 +29,7 @@ NodeJs is neither a framework or language . NodeJS is a Runtime Environment for 
 
 Ex: 
 ```javascript
-PS C:\Users\ayush> node
+shekhar-ryzen5@shekhar-ryzen5:/media/shekhar-ryzen5/Data - Hard Disk/node-js$  node
 Welcome to Node.js v20.10.0.
 Type ".help" for more information.
 > console.log("Hello");
