@@ -21,3 +21,4 @@ console.log(3)
 // Max? - 8core cpu - 8
 
 console.log(os.cpus().length);
+console.log(os.cpus().length);
