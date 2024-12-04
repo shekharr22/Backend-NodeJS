@@ -1,0 +1,157 @@
+Begining of Node
+Following Mastering NodeJS tutorial of Piyush Garg.
+
+S.No.	Topic	Points
+01.	What is NodeJS ?	
+JavaScript Engine
+Benefits of NodeJS
+What is NodeJS
+
+02.	NodeJS Installation	
+Steps to install NodeJS
+What is npm
+
+03.	Hello World NodeJS	
+Print Hello World using NodeJS
+
+04.	Modules in NodeJS	
+Spiliting funtions using modular approch
+De-structring
+
+05.	File Handling in NodeJS	
+File Handling Module (fs)
+Synchronous call and Async call in fs module
+CRUD operation on files.
+
+06.	How NodeJS Works	
+Client Server Architecture
+How nodejs work internally
+Request -> Blocking & Non-Blocking
+
+07.	Building Http Server in NodeJS	
+create a http server using http module
+create and run a http server
+
+08.	Handling Url	
+Structure of URL(Uniform Resource Locator)
+How to user url module in server
+
+09.	Http methods	
+GET , POST , PUT , PATCH , DELETE
+Make All these requests using Http mehtod
+
+10.	Getting Start with Express	
+Installing express
+Made express server and requests
+
+11.	How Versioning Works in NodeJS ?	
+About Versioning of NodeJS
+Minor Fix, Recommended Bug Fix , Major Realese
+
+12.	What is Rest API ?	
+Restfull API Rules
+Work on Client Server Architecture
+Respect all Http methods
+
+13.	Building Rest API using NodeJS and Express	
+Api to list all the users
+Uses Dynamic Path Parameter to show user
+Api to create a new user
+Api to delete user
+
+14.	Intro to Postman for Rest API	
+Uses POSTMAN app to create apis
+
+15.	Express Middleware	
+What is middleware
+Middleware functions
+
+16.	What are Http Headers in API	
+What are http Headers in API ?
+
+17.	Http Status Codes	
+Status Code
+Types of Responses
+
+18.	Getting Started with MongoDB	
+What is MongoDB ?
+Commands of MongoDB
+
+19.	Connecting NodeJS with MongoDB	
+What is Mongoose?
+What are the schema?
+
+20.	Model View Controller in NodeJS	
+Model View Controller
+
+21.	Custom URl Shortner	
+Started the URL Shortner Project
+
+22.	Server Side Rendering with EJS and NodeJS	
+Uses EJS for Server side rendering for URL Shortner
+
+23.	Building Node.js Authentication from Scratch	
+Authentication
+Authentication Patterns - Stateless & Statefull
+How to transfer uid?
+Express flow of authentication
+
+24.	JWT Authentication	
+Problems in Statefull Authentication
+Stateless Authentication
+
+25.	What are Cookies ?	
+Cookies in NodeJS
+Create cookies using - Browser, Header
+
+26.	Authorization	
+What is Authorization?
+How authorization works?
+
+27.	Creating Discord Bot in NodeJS	
+How to make Discord Bot?
+
+28.	Uploading Files with Multer	
+Steps to upload file with Multer
+
+29.	Setting Up Project - Blog App	
+Started Blog App
+Steps to Create Blog App
+
+30.	Setting Up Authentication - Blog App	
+Started Blog App
+Steps to Create Authentication
+
+31.	Complete Blog App	
+Completed the Blog App
+
+32.	Deploy NodeJS App on Cloud	
+Learned about .env file
+Steps to deploy NodeJS app on Cloud
+
+33.	Websocket	
+What is WebSocket?
+What is the Problem on Other Protocol ?
+How could be solved via WebSocket using Socket.io Library?
+
+34.	Streams	
+What is Streams in NodeJS?
+What is the Problem?
+How could be solved via Streams?
+
+35.	Scale NodeJS app using Cluster module	
+Problem
+Solution
+
+36.	What is Nginx ?	
+What is Nginx?
+Advantage
+
+37.	Install & Setup Nginx	
+Installation of Nginx on Docker
+Stpes to Install
+
+42.	GraphQL	
+What is GraphQL?
+Problems Solved by GraphQL
+What is Axios?
