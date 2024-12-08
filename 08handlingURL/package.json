@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "url": "^0.11.4"
+  },
+  "name": "08handlingurl",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
