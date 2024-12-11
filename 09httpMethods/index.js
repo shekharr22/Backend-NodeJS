@@ -23,18 +23,20 @@ const myServer = http.createServer((req, res) => {
         const search = myUrl.query.search_query;
         res.end("Here are you results for" + search);
         break;
-
         case "/signup":
           if(req.method === "GET") res.end("this is a signup form");
-          else if (req.method === "GET")
+          else if (req.method === "POST");
+          res.end("Success");
 
         default:
           res.end("404 Not Found")
     }
   });
-});
+});   
 
 // console.log(req.headers)
 // console.log(req)
 
 myServer.listen(8000, () => console.log("Server Started!"));
+
+
