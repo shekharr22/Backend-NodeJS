@@ -1,12 +1,35 @@
 const express = require("express");
 const users = require("./MOCK_DATA.json")
-const fs = require("fs")
+const fs = require("fs");
+const path = require("path");
 
 const app = express();
 const PORT = 8000;
 
-//Middleware - Plugin
+//Middlewares
 app.use(express.urlencoded({extended:false}));
+
+app.use((req , res , next) =>{
+
+    console.log("Hello from middleware 1");
+    // return res.json({msg:"Hello from middleware 1"});
+    
+    req.myUserName= "ayush.dev";
+    fs.appendFile('log.txt', `${Date.now()} : ${req.ip}  ${req.method} : ${req.path} \n` ,(err , data)=>{
+        next();
+    })
+    
+    
+})
+
+app.use((req , res , next)=>{
+    console.log("Hello from middleware 2" , req.myUserName);
+
+    //return statement stops the execution
+    // return res.end("Hey");
+
+    next();
+});
 
 //Routes
 app.get('/users', (req, res)=>{
@@ -21,6 +44,8 @@ app.get('/users', (req, res)=>{
 //REST Api
 
 app.get('/api/users', (req, res)=>{
+    
+    console.log(" I am in get route ", req.myUserName)
     return res.json(users);
 })
 
@@ -53,15 +78,6 @@ app.post('/api/users' , (req , res)=>{
     return res.json({status: "sucess", id:users.length});
 });
 
-// app.patch('/api/users/:id' , (req , res)=>{
-//     // TODO : Edit the user with id
-//     return res.json({status: "pending"});
-// })
-
-// app.delete('/api/users/:id' , (req , res)=>{
-//     // TODO : delete the user with id
-//     return res.json({status: "pending"});
-// })
 
 app.listen(PORT , ()=>{
     console.log(`Server started at Port ${PORT}`)
