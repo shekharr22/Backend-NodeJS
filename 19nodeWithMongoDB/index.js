@@ -1,12 +1,47 @@
 const express = require("express");
 const users = require("./MOCK_DATA.json");
 const fs = require("fs");
+const mongoose = require("mongoose");
 const path = require("path");
+const { type } = require("os");
 
 const app = express();
 const PORT = 8000;
 
-//Middlewares
+//Connection
+
+mongoose
+  .connect("mongodb://127.0.0.1:27017/youtube-app-1")
+  .then(() => console.log("MongoDB Connected"))
+  .catch((err) => console.log("Mongo Error", err));
+
+//Schema
+
+const userSchema = new mongoose.Schema({
+  fistName: {
+    type: String,
+    required: true
+  },
+  lastName: {
+    type: String
+  },
+  email: {
+    type: String,
+    required: true,
+    unique: true
+  },
+  jobTitle: {
+    type: String
+  },
+  gender: {
+    type: String
+  }
+});
+
+//Model
+const User = mongoose.model("user", userSchema);
+
+//Middlewares - plugin
 app.use(express.urlencoded({ extended: false }));
 
 //Routes
@@ -38,7 +73,7 @@ app.route("/api/users/:id").get((req, res) => {
   return res.json(user);
 });
 
-app.post("/api/users", (req, res) => {
+app.post("/api/users", async (req, res) => {
   // TODO : Create new user
 
   const body = req.body;
@@ -53,13 +88,16 @@ app.post("/api/users", (req, res) => {
     return res.status(400).json({ msg: "ALl fields are required" });
   }
 
-  users.push({ ...body, id: users.length + 1 });
-  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
-    return res.json({ status: "pending" });
+  const result = await User.create({
+    firstName: body.first_name,
+    lastName: body.last_name,
+    email: body.email,
+    gender: body.gender,
+    jobTitle: body.job_title
   });
 
-  //Status code 201
-  return res.status(201).json({ status: "sucess", id: users.length });
+  console.log("result", result);
+  return res.status(201).json({ msg: "success" });
 });
 
 app.listen(PORT, () => {
