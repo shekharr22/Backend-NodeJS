@@ -1,8 +1,6 @@
 const express = require("express");
 const fs = require("fs")
 
-
-
 const app = express();
 const PORT = 8000;
 
@@ -13,7 +11,6 @@ mongoose.connect('mongodb://127.0.0.1:27017/learning')
 
 //Middlewares
 app.use(express.urlencoded({extended:false}));
-
 
 
 //Routes
