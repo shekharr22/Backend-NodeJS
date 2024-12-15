@@ -2,13 +2,13 @@ const express = require("express");
 
 const router = express.Router();
 
-router.get("/api/users", async (req, res) => {
+router.get("/", async (req, res) => {
   const allDbUsers = await User.find({});
   return res.json(allDbUsers);
 });
 
 router
-  .route("/api/users/:id")
+  .route("/:id")
   .get(async (req, res) => {
     const user = await User.findById(req.params.id);
     if (!user) return req.status(404).json({ error: "User Not found" });
@@ -23,7 +23,7 @@ router
     return res.json({ status: "Success" });
   });
 
-router.post("/api/users", async (req, res) => {
+router.post("/", async (req, res) => {
   const body = req.body;
   if (
     !body ||
