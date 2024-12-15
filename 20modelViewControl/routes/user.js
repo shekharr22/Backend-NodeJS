@@ -1,11 +1,10 @@
 const express = require("express");
+const {handleGetAllUsers} = require('../controllers/user')
 
 const router = express.Router();
 
-router.get("/", async (req, res) => {
-  const allDbUsers = await User.find({});
-  return res.json(allDbUsers);
-});
+router.get("/", handleGetAllUsers);
+
 
 router
   .route("/:id")
