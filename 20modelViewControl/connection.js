@@ -1,9 +1,10 @@
-const mongoose = require("mongoose")
+const mongoose = require('mongoose');
 
 async function connectMongoDb(url){
     return mongoose.connect(url)
+
 }
 
-module.exports = {
+module.exports  = {
     connectMongoDb,
-}
+};
