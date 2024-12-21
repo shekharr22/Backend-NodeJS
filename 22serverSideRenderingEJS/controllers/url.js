@@ -11,7 +11,7 @@ async function handleGenerateNewShortURL(req , res){
         shortId : shortID,
         redirectURL : body.url,
         visitHistory : [],
-        
+        a
    });
 
    console.log("Request body:", req.body);
