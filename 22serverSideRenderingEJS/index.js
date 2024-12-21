@@ -13,10 +13,10 @@ connectToMongoDB("mongodb://127.0.0.1:27017/short-url").then(() =>
 );
 
 app.set("view engine", "ejs");
-app.set("views", path.resolve("./views"));
+app.set("views", path.join(__dirname, "views"));
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: false })); //for form data
+app.use(express.urlencoded({ extended: false }));
 
 app.use("/url", urlRoute);
 app.use("/", staticRoute);
